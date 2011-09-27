@@ -1,0 +1,64 @@
+<html>
+<head>
+  <link rel="stylesheet" href="{{STATIC_URL}}css/rdfviewer/viewer.css">
+  <link rel="stylesheet" href="{{STATIC_URL}}css/rdfviewer/transcript.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+</head>
+<body>
+  <div id="navigation">
+    <select id="part">
+      {% for item in part.items %}
+      <option value="{{ item.uri }}"
+      {% ifequal item.uri part.selected %}
+        selected="selected"
+      {% endifequal %}
+      >{{ item.label }}</option>
+      {% endfor %}
+    </select>
+    <select id="canto">
+      {% for item in canto.items %}
+      <option value="{{ item.uri }}"
+      {% ifequal item.uri canto.selected %}
+        selected="selected"
+      {% endifequal %}
+      >{{ item.label }}</option>
+      {% endfor %}
+    </select>
+    <select id="line">
+      {% for item in line.items %}
+      <option value="{{ item.uri }}"
+      {% ifequal item.uri line.selected %}
+        selected="selected"
+      {% endifequal %}
+      >{{ item.label }}</option>
+      {% endfor %}
+    </select>
+    <select id="doc">
+      {% for item in doc.items %}
+      <option value="{{ item.uri }}"
+      {% ifequal item.uri doc.selected %}
+        selected="selected"
+      {% endifequal %}
+      >{{ item.label }}</option>
+      {% endfor %}
+    </select>
+    <input id="work" type="hidden" value="{{ work_uri }}"/>
+    <input id="go" type="button" value="Go!"/>
+    <div id="page_nav">
+      <input id="cur_page" type="hidden" value="">
+      <input id="prev" type="button" value="prev"/>
+      <input id="next" type="button" value="next"/>
+    </div>
+  </div>
+  <div id="content_container">
+  <div id="content">
+    <div id="transcript">
+    </div>
+    <div id="image">
+      <iframe></iframe>
+    </div>
+  </div>
+  </div>
+  <script src="{{ STATIC_URL }}js/rdfviewer/viewer.js"></script>
+</body>
+</html>

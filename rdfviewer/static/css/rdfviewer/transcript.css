@@ -1,0 +1,81 @@
+lb {
+    display: block;
+}
+
+l {
+    display: block;
+}
+
+l[rend="red"] {
+    color: red;
+}
+
+.linenum {
+    display: inline;
+    float: left;
+    margin: 0 0 0 -40px;
+}
+
+.intend {
+    padding: 0 0 0 20px ;
+}
+
+expan {
+    font-style: italic;
+}
+
+column {
+    display: inline-block;
+    width: 310px;
+    padding: 5px 5px 5px 20px; 
+}
+
+rdg {
+    display: none;
+}
+
+hi[rend="er"] {
+    color: blue;
+}
+
+.line_diff {
+    position: absolute;
+    background: white;
+    border: 1px solid gray;
+    padding: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-box-shadow: 0px 10px 5px #AAA;
+    -webkit-box-shadow: -5px -5px 10px #777;
+    text-align: center;
+}
+
+.line_diff xml{
+    display: inline-block;
+}
+
+.line_diff input{
+    width: 50px;
+    margin: 0 auto;
+}
+
+.line_diff table rdg{
+    display: block;
+}
+
+.line_diff tr{
+    padding: 15px;
+}
+
+.line_diff rdg span{
+    width: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    font-style: italic;
+}
+
+.line_diff rdg w{
+    vertical-align: middle;
+}
+
+

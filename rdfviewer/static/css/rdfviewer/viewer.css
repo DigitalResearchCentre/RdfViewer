@@ -1,0 +1,27 @@
+#content_container {
+    display: table;
+}
+#content {
+    width: 1400px;
+    display: table-row;
+}
+#content>div{
+    display: table-cell;
+    vertical-align: top;
+}
+
+#transcript {
+    width: 700px;
+}
+
+#image>iframe {
+    width: 600px;
+    height: 100%;
+}
+
+#page_nav {
+    display: inline-block;
+    margin-left: 100px;
+}
+
+
