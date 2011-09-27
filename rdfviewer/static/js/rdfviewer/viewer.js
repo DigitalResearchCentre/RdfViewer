@@ -1,4 +1,5 @@
 var cur_line_diff = null;
+var base_url = '/rdf/'
 
 function get_info(str){
   var lst = str.split('-');
@@ -23,7 +24,7 @@ function create_line_diff(info){
   });
   var diff_table = $('<table></table>');
   line_diff.append(diff_table);
-  $.get('/line', {
+  $.get(base_url+'line', {
     'part': info['part'],
     'canto': info['canto'],
     'line': info['line']
@@ -79,7 +80,7 @@ function apply_format(){
 }
 
 function update_navigator(){
-  $.get('', function(data){
+  $.get(base_url, function(data){
     nav.cantos.empty();
     for (var i = 0; i < data.cantos.length; i++) {
       canto = data.cantos[i];
@@ -129,7 +130,7 @@ RdfViewer.prototype = {
     var post_data = this.getNavData();
     post_data['format'] = 'json';
     var _this = this;
-    $.get('/'+this.work.val(), post_data, function(data){
+    $.get(base_url+this.work.val(), post_data, function(data){
       function loadOption(select, d){
         select.empty();
         var items = d['items']
@@ -151,7 +152,7 @@ RdfViewer.prototype = {
 
   updateContent: function(data_dict){
     var _this = this;
-    $.get('/page', data_dict, function(data){
+    $.get(base_url+'page', data_dict, function(data){
       var transcript = data['transcript'];
       var image = data['image'][0];
       _this.cur_page.val(data['page']);

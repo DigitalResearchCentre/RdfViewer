@@ -7,7 +7,14 @@ from rdfviewer.models import ns_dict, Work, Document, Text
 from rdfviewer.models import WorkPart, DocumentPart, TextPart, Page
 import urllib2
 
-def viewer(request, work_uri):
+def index(request):
+    works = Work.all()
+    return render_to_response(
+        'rdfviewer/index.html', {'works': works}, 
+        context_instance=RequestContext(request))
+
+def viewer(request):
+    work_uri = request.GET.get('work')
     parts = Work.get(work_uri).hasPart()
     part_uri = request.GET.get('part', parts[0].uri)
     cantos = WorkPart.get(part_uri).hasPart()

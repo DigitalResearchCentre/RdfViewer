@@ -1,0 +1,18 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Index</title>
+</head>
+<body>
+  <ul>
+    <h1>Choose a work: </h1>
+    {% for work in works %}
+    <li>
+    <a href="{% url rdfviewer:work %}?work={{work.uri}}">
+      {{work.label}}
+    </a>
+    <li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
