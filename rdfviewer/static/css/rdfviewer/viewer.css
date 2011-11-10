@@ -14,13 +14,9 @@
     width: 700px;
 }
 
-#image {
-    height: 100%;
-}
-
 #image>iframe {
     width: 600px;
-    height: 100%;
+    min-height: 750px;
 }
 
 #page_nav {
