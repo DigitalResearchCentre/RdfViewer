@@ -1,0 +1,18 @@
+#index {
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px #777;
+    width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    min-height: 700px;
+}
+
+#index ul {
+    margin: 0;
+    padding: 0;
+}
+
+#index ul li {
+    font-size: 20px;
+}

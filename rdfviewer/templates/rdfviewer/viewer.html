@@ -1,10 +1,8 @@
-<html>
-<head>
+{% block style %}
   <link rel="stylesheet" href="{{STATIC_URL}}css/rdfviewer/viewer.css">
   <link rel="stylesheet" href="{{STATIC_URL}}css/rdfviewer/transcript.css">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-</head>
-<body>
+{% endblock %}
+{% block content %}
   <div id="navigation">
     <select id="part">
       {% for item in part.items %}
@@ -59,6 +57,7 @@
     </div>
   </div>
   </div>
+{% endblock %}
+{% block script %}
   <script src="{{ STATIC_URL }}js/rdfviewer/viewer.js"></script>
-</body>
-</html>
+{% endblock %}

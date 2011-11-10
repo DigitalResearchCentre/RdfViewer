@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" href="{{STATIC_URL}}css/rdfviewer/base.css">
+  {% block style %}{% endblock %}
+</head>
+<body>
+  {% block content %}{% endblock %}
+  <div id="script">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    {% block script %}{% endblock %}
+  </div>
+</body>
+</html>

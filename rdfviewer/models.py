@@ -40,6 +40,18 @@ class Model(object):
             self._label = self.sparql(query)[0]['label']
         return self._label
 
+    @property
+    def comment(self):
+        if not hasattr(self, '_comment'):
+            query = '''
+            SELECT ?comment WHERE {
+                %s %s ?comment
+            }
+            ''' % (self.n3(), ns_dict['rdfs']['comment'].n3())
+            result = self.sparql(query)
+            self._comment = result[0]['comment'] if len(result) > 0 else ''
+        return self._comment
+
     def __init__(self, uri):
         self.uri = uri
 
