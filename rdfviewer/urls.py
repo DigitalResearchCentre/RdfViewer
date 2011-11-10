@@ -6,6 +6,6 @@ urlpatterns = patterns(
     (r'^page$', 'rdfviewer.views.page'),
     (r'^line$', 'rdfviewer.views.line'),
     url(r'^work$', 'rdfviewer.views.viewer', name='work'),
-    url(r'^copyright$', 'rdfviewer.viewer.copyright', name='copyright'),
+    url(r'^copyright$', 'rdfviewer.views.copyright', name='copyright'),
 )
 
