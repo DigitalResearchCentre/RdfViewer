@@ -1,0 +1,16 @@
+.copyright {
+    width: 640px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.copyright h4 {
+    text-align: center;
+}
+
+.copyright>.input {
+    width: 130px;
+    margin: 20px auto;
+    display: block;
+}
