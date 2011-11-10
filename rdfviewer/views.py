@@ -104,3 +104,8 @@ def line(request):
     return HttpResponse(response.read(), mimetype='application/json')
 
 
+def copyright(request):
+    return render_to_response(
+        'rdfviewer/copyright.html', {}, 
+        context_instance=RequestContext(request))
+
