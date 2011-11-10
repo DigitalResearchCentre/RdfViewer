@@ -55,9 +55,13 @@ def page(request):
         line = WorkPart.get(request.GET.get('line'))
         doc = Document.get(request.GET.get('doc'))
         page = Page.get(line=line, doc=doc)
+    url = page.hasTranscript()
+    response = urllib2.urlopen(url)
+    transcript = response.read()
     return HttpResponse(json.dumps({
         'page': page.uri,
-        'transcript': page.hasTranscript(),
+        'transcript_url': url,
+        'transcript': transcript,
         'image': page.hasImage()
     }))
 
@@ -85,7 +89,9 @@ def line(request):
     line_uri = ns_dict['drc']['%s-%s-%s'] % (part, canto, line)
     data = {'witnesses': []}
     for l in WorkPart.get(line_uri).hasTextOf():
-        transcript = l.hasTranscript()
+        url = l.hasTranscript()
+        response = urllib2.urlopen(url)
+        transcript = response.read()
         tokens = get_tokens(transcript)
         data['witnesses'].append(
             {'id': str(l.uri).split('-')[-1], 'tokens':tokens})

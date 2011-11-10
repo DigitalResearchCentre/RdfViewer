@@ -199,10 +199,7 @@ class TextPart(Text):
         ''' % (self.n3(), ns_dict['drc']['hasTranscript'].n3(),
                ns_dict['drc']['webAddress'].n3())
         result = self.sparql(query)[0]
-        print result['webAddress']
-        response = urllib2.urlopen(result['webAddress'])
-        xml = response.read()
-        return xml
+        return result['webAddress']
 
     def hasImage(self):
         query = '''

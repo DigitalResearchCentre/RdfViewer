@@ -4,6 +4,7 @@ lb {
 
 l {
     display: block;
+    margin-left: 15px;
 }
 
 l[rend="red"] {
@@ -27,7 +28,7 @@ expan {
 column {
     display: inline-block;
     width: 310px;
-    padding: 5px 5px 5px 20px; 
+    padding: 5px 5px 5px 5px; 
 }
 
 rdg {

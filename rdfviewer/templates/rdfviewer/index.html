@@ -1,17 +1,39 @@
 {% extends "rdfviewer/base.html" %}
 {% block style %}
+  <link rel="stylesheet" href="{{STATIC_URL}}css/rdfviewer/copyright.css">
   <link rel="stylesheet" href="{{STATIC_URL}}css/rdfviewer/index.css">
 {% endblock %}
 {% block content %}
+
 <div id="index">
   <h1>Index</h1>
   <ul>
     {% for work in works %}
-    <li>
+    <li class="work">
       <a href="{% url rdfviewer:work %}?work={{work.uri}}">{{work.label}}:</a>
       <span>{{work.comment}}</span>
+      <div class="copyright">
+        <h4>Transcripts  Copyright</h4>
+        <p>Copyright in all transcripts is held by Prue Shaw, University College London. All transcripts are made available under the Creative Commons &ldquo;Attribution-NonCommercial-ShareAlike 3.0&rdquo; licence, available in summary form at <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">http://creativecommons.org/licenses/by-nc-sa/3.0/</a> (full legal code at <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode">http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode</a>). The copyright holder has granted SDE and SISMEL an exclusive commercial license for publication of the transcripts. </p>
+        <p>This licence permits the transcripts  to be used for non-commercial use, without prior written consent, subject to the three conditions here given.</p>
+        <ul type="bullet">
+          <li>Under the attribution and share-alike provisions, every view of any part of any transcript must make a link available to the reader to a page containing these words:</li>
+        </ul>
+        <q>Original transcript created by the <hi rend="ital">Commedia</hi> Project 1998-2010, with funding from The British Academy, The Arts and Humanities Research Council, The Modern Humanities Research Association and the Rockefeller Foundation, by Prue Shaw (Editor), Jennifer Marshall (Research Assistant) and Peter Robinson (Edition Realization; Project Management), &copyright; Prue Shaw. This transcript is licensed under the Creative Commons &lsquo;Attribution-NonCommercial-ShareAlike 3.0&rsquo; licence.</q>
+        <ul type="bullet">
+          <li>Under the moral rights provision, the transcripts must not be published in an inappropriate context or in any manner which might bring disrepute on the original authors of the transcripts.</li>
+          <li>Any further publication of the transcripts must make them available to others under identical conditions as the applicable Creative Commons licence.</li>
+        </ul>
+        <div class="input">
+          <input type="button" id="accept" value="Accept"/>
+          <input type="button" id="cancel" value="Cancel"/>
+        </div>
+      </div>    
     </li>
     {% endfor %}
   </ul>
 </div>
+{% endblock %}
+{% block script %}
+  <script src="{{STATIC_URL}}js/rdfviewer/index.js"></script>
 {% endblock %}

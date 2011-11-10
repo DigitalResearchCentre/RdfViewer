@@ -21,7 +21,11 @@
 
 #page_nav {
     display: inline-block;
-    margin-left: 100px;
+    margin-left: 50px;
+}
+
+#navigation a {
+    margin-left: 20px;
 }
 
 

@@ -1,18 +1,26 @@
+body {
+    background: #999;
+}
+
 #index {
+    background: white;
     border-radius: 10px;
-    box-shadow: 0 0 10px 5px #777;
+    box-shadow: 0 0 10px 5px #666;
     width: 800px;
     margin: 0 auto;
     padding: 10px;
-    text-align: center;
     min-height: 700px;
 }
 
-#index ul {
-    margin: 0;
-    padding: 0;
+#index h1 {
+    text-align: center;
 }
 
-#index ul li {
+#index>ul>li {
     font-size: 20px;
+    padding: 10px 60px;
+}
+
+.copyright {
+    display: none;
 }
