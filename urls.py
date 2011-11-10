@@ -1,8 +1,7 @@
 from django.conf.urls.defaults import patterns, include, url
 
-urlpatterns = patterns(
-    '',
-    (r'', include('rdfviewer.urls', namespace='rdfviewer'))
+urlpatterns = patterns('',
+    url(r'', include('rdfviewer.urls', namespace='rdfviewer'))
 )
 
 import settings
